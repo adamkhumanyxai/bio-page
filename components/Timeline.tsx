@@ -12,7 +12,7 @@ export default function Timeline() {
 
   return (
     <section id="timeline" ref={ref as React.RefObject<HTMLElement>} style={{ background: 'var(--bg-ink)', color: '#fff', padding: '120px 0 140px' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '0 56px' }}>
+      <div style={{ maxWidth: 1520, margin: '0 auto', padding: '0 40px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: 14, borderBottom: '1px solid rgba(255,255,255,0.15)', marginBottom: 56, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--mono)' }}>
           <span><span style={{ color: 'var(--accent)' }}>§ 01</span> · The spine</span>
           <span>Click any era · pictured: era {String(active + 1).padStart(2, '0')} of {String(TIMELINE.length).padStart(2, '0')}</span>

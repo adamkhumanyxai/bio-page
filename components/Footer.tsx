@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer style={{ background: 'var(--bg)', borderTop: '1px solid var(--rule)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '44px 56px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12, color: 'var(--muted)', letterSpacing: 0.6, fontFamily: 'var(--mono)' }}>
+      <div style={{ maxWidth: 1520, margin: '0 auto', padding: '44px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12, color: 'var(--muted)', letterSpacing: 0.6, fontFamily: 'var(--mono)' }}>
         <span>© 2026 Adam Kratiuk · Cronulla, NSW · Set in Inter Tight & Inter</span>
         <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ width: 7, height: 7, borderRadius: 999, background: '#7CFFB2', display: 'inline-block' }} />

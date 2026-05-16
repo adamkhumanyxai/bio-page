@@ -16,7 +16,7 @@ const BRANDS = [
 export default function Brands() {
   return (
     <section style={{ borderTop: '1px solid var(--rule)', borderBottom: '1px solid var(--rule)', marginTop: 72 }}>
-      <div style={{ padding: '24px 48px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{ padding: '24px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {BRANDS.map(b => (
           <div
             key={b.name}

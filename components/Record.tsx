@@ -13,7 +13,7 @@ const WINS = [
 export default function Record() {
   const ref = useFadeIn();
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} style={{ maxWidth: 1320, margin: '0 auto', padding: '120px 56px' }}>
+    <section ref={ref as React.RefObject<HTMLElement>} style={{ maxWidth: 1520, margin: '0 auto', padding: '120px 40px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: 14, borderBottom: '1px solid var(--rule)', marginBottom: 36, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
         <span><span style={{ color: 'var(--accent)' }}>§ 04</span> · The receipts · track record, not résumé</span>
         <span>A PDF is on request — these are what hiring managers actually want</span>

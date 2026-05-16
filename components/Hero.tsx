@@ -14,7 +14,7 @@ const STATS = [
 export default function Hero({ onTalk }: Props) {
   const ref = useFadeIn();
   return (
-    <section id="story" ref={ref as React.RefObject<HTMLElement>} style={{ maxWidth: 1320, margin: '0 auto', padding: '72px 56px 0' }}>
+    <section id="story" ref={ref as React.RefObject<HTMLElement>} style={{ maxWidth: 1520, margin: '0 auto', padding: '72px 40px 0' }}>
       <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 1fr', gap: 56, alignItems: 'end' }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 36, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>

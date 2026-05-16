@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//home/akratiuk85/.claude/plugins/cache/claude-plugins-official/superpowers/5.1.0/skills/subagent-driven-development/**)",
+      "Bash(pnpm --version)",
+      "Bash(npx create-next-app@latest . --typescript --app --no-src-dir --no-tailwind --import-alias \"@/*\" --yes)",
+      "Read(//home/akratiuk85/**)",
+      "Bash(npx create-next-app@latest bio-page-temp --typescript --app --no-src-dir --no-tailwind --import-alias \"@/*\" --yes)",
+      "Bash(cp -r /home/akratiuk85/bio-page-temp/app /home/akratiuk85/Bio-Page/)",
+      "Bash(cp -r /home/akratiuk85/bio-page-temp/public /home/akratiuk85/Bio-Page/)",
+      "Bash(cp /home/akratiuk85/bio-page-temp/package.json /home/akratiuk85/Bio-Page/)",
+      "Bash(cp /home/akratiuk85/bio-page-temp/package-lock.json /home/akratiuk85/Bio-Page/)",
+      "Bash(cp /home/akratiuk85/bio-page-temp/next.config.ts /home/akratiuk85/Bio-Page/)",
+      "Bash(npm run *)",
+      "Bash(echo \"PID: $!\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(kill 16711)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(npx tsc *)",
+      "Bash(git commit *)",
+      "Bash(curl -sL \"https://cdn.simpleicons.org/cisco\" -o /home/akratiuk85/Bio-Page/public/logos/cisco.svg)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/simple-icons/simple-icons/master/icons/cisco.svg\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/simple-icons/simple-icons/master/icons/twilio.svg\")",
+      "WebSearch"
+    ],
+    "additionalDirectories": [
+      "/home/akratiuk85/bio-page-temp"
+    ]
+  }
+}

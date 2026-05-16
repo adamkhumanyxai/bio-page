@@ -16,7 +16,7 @@ export default function OffTheClock() {
   const ref = useFadeIn();
   return (
     <section id="off-the-clock" ref={ref as React.RefObject<HTMLElement>} style={{ background: 'var(--bg)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '120px 56px' }}>
+      <div style={{ maxWidth: 1520, margin: '0 auto', padding: '120px 40px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: 14, borderBottom: '1px solid var(--rule)', marginBottom: 36, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
           <span><span style={{ color: 'var(--accent)' }}>§ 06</span> · Off the clock · the human behind the seller</span>
           <span>Six tiles · drop in real photos when ready</span>

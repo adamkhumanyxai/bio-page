@@ -10,7 +10,7 @@ const NAV_LINKS = [
 export default function Nav({ onTalk }: Props) {
   return (
     <div style={{ position: 'sticky', top: 0, zIndex: 50, background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(10px)', borderBottom: '1px solid var(--rule)' }}>
-      <div style={{ maxWidth: 1320, margin: '0 auto', padding: '20px 56px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{ maxWidth: 1520, margin: '0 auto', padding: '20px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <div style={{ width: 32, height: 32, background: 'var(--bg-ink)', color: '#fff', display: 'grid', placeItems: 'center', fontSize: 13, fontWeight: 700, fontFamily: 'var(--display)', letterSpacing: -0.4 }}>
             AK
