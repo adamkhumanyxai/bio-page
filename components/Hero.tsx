@@ -15,7 +15,17 @@ export default function Hero({ onTalk }: Props) {
   const ref = useFadeIn();
   return (
     <section id="story" ref={ref as React.RefObject<HTMLElement>} style={{ maxWidth: 1520, margin: '0 auto', padding: '72px 40px 0' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 1fr', gap: 56, alignItems: 'end' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.05fr', gap: 56, alignItems: 'end' }}>
+        <div style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', top: -32, right: -16, padding: '5px 10px', background: 'var(--accent)', color: '#fff', fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: 1.2, zIndex: 2 }}>
+            FIG. 01 · THE OPERATOR
+          </div>
+          <div style={{ position: 'relative', overflow: 'hidden', aspectRatio: '4/5', maxHeight: 620 }}>
+            <Image src="/adam-portrait.jpg" alt="Adam Kratiuk" fill style={{ objectFit: 'cover', objectPosition: 'center 30%', filter: 'grayscale(1) contrast(1.05)' }} priority />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 60%, rgba(44,95,255,0.09) 100%)', mixBlendMode: 'multiply' }} />
+          </div>
+        </div>
+
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 36, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
             <span style={{ width: 36, height: 1, background: 'var(--ink)', display: 'block' }} />
@@ -47,19 +57,6 @@ export default function Hero({ onTalk }: Props) {
                 Skip to timeline ↓
               </a>
             </div>
-          </div>
-        </div>
-
-        <div style={{ position: 'relative' }}>
-          <div style={{ position: 'absolute', top: -32, right: -16, padding: '5px 10px', background: 'var(--accent)', color: '#fff', fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: 1.2, zIndex: 2 }}>
-            FIG. 01 · THE OPERATOR
-          </div>
-          <div style={{ position: 'relative', overflow: 'hidden', aspectRatio: '4/5', maxHeight: 620 }}>
-            <Image src="/adam-portrait.jpg" alt="Adam Kratiuk" fill style={{ objectFit: 'cover', objectPosition: 'center 30%', filter: 'grayscale(1) contrast(1.05)' }} priority />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 60%, rgba(44,95,255,0.09) 100%)', mixBlendMode: 'multiply' }} />
-          </div>
-          <div style={{ marginTop: 14, display: 'flex', justifyContent: 'space-between', fontSize: 10, color: 'var(--muted)', letterSpacing: 1.4, textTransform: 'uppercase', fontFamily: 'var(--mono)' }}>
-            <span>Adam Kratiuk</span><span>shot · cronulla, nsw</span><span>© 2026</span>
           </div>
         </div>
       </div>
