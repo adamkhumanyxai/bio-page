@@ -1,0 +1,96 @@
+'use client';
+import Image from 'next/image';
+import { useFadeIn } from '@/hooks/useFadeIn';
+
+interface Props { onTalk: () => void; }
+
+const STATS = [
+  { big: '20+', small: 'Years in voice', note: 'PBX → Voice AI', accent: false },
+  { big: '4×', small: "President's Club", note: 'Monaco · Costa Rica · Jamaica · Bahamas', accent: false },
+  { big: '191%', small: 'Quota, FY23 at Twilio', note: '331% in 2021 · 175% in 2022', accent: false },
+  { big: '4', small: 'AI projects shipped', note: 'Nights & weekends', accent: true },
+];
+
+export default function Hero({ onTalk }: Props) {
+  const ref = useFadeIn();
+  return (
+    <section id="story" ref={ref as React.RefObject<HTMLElement>} style={{ maxWidth: 1320, margin: '0 auto', padding: '72px 56px 0' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 1fr', gap: 56, alignItems: 'end' }}>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 36, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
+            <span style={{ width: 36, height: 1, background: 'var(--ink)', display: 'block' }} />
+            Vol. I · A bio in long form
+          </div>
+
+          <h1 style={{ fontFamily: 'var(--display)', fontSize: 196, lineHeight: 0.88, letterSpacing: -8, margin: 0, fontWeight: 800 }}>
+            Hello<span style={{ color: 'var(--accent)' }}>.</span>
+          </h1>
+
+          <div style={{ marginTop: 36, maxWidth: 520 }}>
+            <p style={{ fontFamily: 'var(--display)', fontSize: 30, lineHeight: 1.2, margin: 0, fontWeight: 500, letterSpacing: -0.6 }}>
+              Twenty years in voice.<br />
+              Six platform shifts.{' '}
+              <span style={{ color: 'var(--muted)', fontWeight: 400, fontStyle: 'italic' }}>One that finally talks back.</span>
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--body)', marginTop: 24 }}>
+              I&apos;m Adam. I&apos;ve sold every wave of business voice since the PBX — most recently as an
+              enterprise AE at Twilio. I&apos;m now pivoting into a founding GTM seat at a Voice AI
+              startup. This site is the conversation, the demo, and the first work sample.
+            </p>
+
+            <div style={{ display: 'flex', gap: 12, marginTop: 32 }}>
+              <button onClick={onTalk} style={{ padding: '15px 22px', background: 'var(--bg-ink)', color: '#fff', border: 'none', borderRadius: 0, fontSize: 13, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 10 }}>
+                <span style={{ width: 7, height: 7, borderRadius: 999, background: 'var(--accent)', boxShadow: '0 0 0 4px rgba(44,95,255,0.25)' }} />
+                Meet my AI twin
+              </button>
+              <a href="#timeline" style={{ padding: '15px 22px', background: 'transparent', color: 'var(--ink)', border: '1px solid var(--ink)', borderRadius: 0, fontSize: 13, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 600, display: 'inline-flex', alignItems: 'center' }}>
+                Skip to timeline ↓
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', top: -32, right: -16, padding: '5px 10px', background: 'var(--accent)', color: '#fff', fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: 1.2, zIndex: 2 }}>
+            FIG. 01 · THE OPERATOR
+          </div>
+          <div style={{ position: 'relative', overflow: 'hidden', aspectRatio: '4/5', maxHeight: 620 }}>
+            <Image src="/adam-portrait.jpg" alt="Adam Kratiuk" fill style={{ objectFit: 'cover', objectPosition: 'center 30%', filter: 'grayscale(1) contrast(1.05)' }} priority />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 60%, rgba(44,95,255,0.09) 100%)', mixBlendMode: 'multiply' }} />
+          </div>
+          <div style={{ marginTop: 14, display: 'flex', justifyContent: 'space-between', fontSize: 10, color: 'var(--muted)', letterSpacing: 1.4, textTransform: 'uppercase', fontFamily: 'var(--mono)' }}>
+            <span>Adam Kratiuk</span><span>shot · cronulla, nsw</span><span>© 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid var(--rule-hard)' }}>
+        {STATS.map((s, i) => (
+          <div key={i} style={{ padding: '32px', borderRight: i < 3 ? '1px solid var(--rule)' : 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <div style={{ fontSize: 10, letterSpacing: 1.6, color: 'var(--muted)', fontFamily: 'var(--mono)' }}>↗ {String(i + 1).padStart(2, '0')}</div>
+            <div style={{ fontFamily: 'var(--display)', fontSize: s.big.length >= 4 ? 46 : 64, fontWeight: 800, letterSpacing: -2, lineHeight: 1, color: s.accent ? 'var(--accent)' : 'var(--ink)' }}>
+              {s.big}
+            </div>
+            <div>
+              <div style={{ fontSize: 14, fontWeight: 600 }}>{s.small}</div>
+              <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{s.note}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 2fr 1fr', gap: 48, alignItems: 'center' }}>
+        <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)', letterSpacing: 1.4 }}>
+          ↘ Reading time · 7 min<br />↘ Listening time · as long as you&apos;d like
+        </div>
+        <p style={{ fontFamily: 'var(--display)', fontStyle: 'italic', fontSize: 19, lineHeight: 1.45, color: 'var(--body)', margin: 0, textAlign: 'center', maxWidth: 600, justifySelf: 'center' }}>
+          &ldquo;If you&apos;ve sold every version of a thing for twenty years — and you can still vibe-code
+          one yourself on a Saturday — you can probably sell the next one.&rdquo;
+        </p>
+        <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)', letterSpacing: 1.4, textAlign: 'right' }}>
+          A. Kratiuk, 2026<br />Cronulla, NSW
+        </div>
+      </div>
+    </section>
+  );
+}
