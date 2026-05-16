@@ -1,15 +1,35 @@
 'use client';
 import Image from 'next/image';
 import { useFadeIn } from '@/hooks/useFadeIn';
+import { useCountUp } from '@/hooks/useCountUp';
 
 interface Props { onTalk: () => void; }
 
 const STATS = [
-  { big: '20+', small: 'Years in voice', note: 'PBX → Voice AI', accent: false },
-  { big: '4×', small: "President's Club", note: 'Monaco · Costa Rica · Jamaica · Bahamas', accent: false },
-  { big: '191%', small: 'Quota, FY23 at Twilio', note: '331% in 2021 · 175% in 2022', accent: false },
-  { big: '4', small: 'AI projects shipped', note: 'Nights & weekends', accent: true },
+  { num: 20, suffix: '+', small: 'Years in voice', note: 'PBX → Voice AI', accent: false },
+  { num: 4, suffix: '×', small: "President's Club", note: 'Monaco · Costa Rica · Jamaica · Bahamas', accent: false },
+  { num: 180, suffix: '%', small: 'Avg quota · 5 yrs at Twilio', note: '331% → 175% → 191% → 120% → 81%', accent: false },
+  { num: 4, suffix: '', small: 'AI projects shipped', note: 'Nights & weekends', accent: true },
 ];
+
+function StatCell({ num, suffix, small, note, accent, index, hasBorder }: {
+  num: number; suffix: string; small: string; note: string; accent: boolean; index: number; hasBorder: boolean;
+}) {
+  const { ref, count } = useCountUp(num);
+  const finalBig = `${num}${suffix}`;
+  return (
+    <div ref={ref} style={{ padding: '32px', borderRight: hasBorder ? '1px solid var(--rule)' : 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
+      <div style={{ fontSize: 10, letterSpacing: 1.6, color: 'var(--muted)', fontFamily: 'var(--mono)' }}>↗ {String(index + 1).padStart(2, '0')}</div>
+      <div style={{ fontFamily: 'var(--display)', fontSize: finalBig.length >= 4 ? 46 : 64, fontWeight: 800, letterSpacing: -2, lineHeight: 1, color: accent ? 'var(--accent)' : 'var(--ink)' }}>
+        {count}{suffix}
+      </div>
+      <div>
+        <div style={{ fontSize: 14, fontWeight: 600 }}>{small}</div>
+        <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{note}</div>
+      </div>
+    </div>
+  );
+}
 
 export default function Hero({ onTalk }: Props) {
   const ref = useFadeIn();
@@ -63,16 +83,7 @@ export default function Hero({ onTalk }: Props) {
 
       <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid var(--rule-hard)' }}>
         {STATS.map((s, i) => (
-          <div key={i} style={{ padding: '32px', borderRight: i < 3 ? '1px solid var(--rule)' : 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <div style={{ fontSize: 10, letterSpacing: 1.6, color: 'var(--muted)', fontFamily: 'var(--mono)' }}>↗ {String(i + 1).padStart(2, '0')}</div>
-            <div style={{ fontFamily: 'var(--display)', fontSize: s.big.length >= 4 ? 46 : 64, fontWeight: 800, letterSpacing: -2, lineHeight: 1, color: s.accent ? 'var(--accent)' : 'var(--ink)' }}>
-              {s.big}
-            </div>
-            <div>
-              <div style={{ fontSize: 14, fontWeight: 600 }}>{s.small}</div>
-              <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{s.note}</div>
-            </div>
-          </div>
+          <StatCell key={i} {...s} index={i} hasBorder={i < 3} />
         ))}
       </div>
 

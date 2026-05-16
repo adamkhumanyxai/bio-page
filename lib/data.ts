@@ -84,7 +84,7 @@ export const PROJECTS = [
 
 export const RECORD = [
   { num: "4×", label: "President's Club — Monaco · Costa Rica · Jamaica · Bahamas", tone: "primary" as const },
-  { num: "191%", label: "of quota — FY23 at Twilio. 331% in 2021. 175% software / 119% revenue in 2022.", tone: "secondary" as const },
+  { num: "180%", label: "avg quota over 5 yrs at Twilio — 331% → 175% → 191% → 120% → 81%", tone: "secondary" as const },
   { num: "2015", label: "Global Mid-Market Rep of the Year — Genesys / Interactive Intelligence", tone: "secondary" as const },
   { num: "20 yrs", label: "In voice — every wave from PBX to Voice AI", tone: "secondary" as const },
   { num: "3 seats", label: "Reseller · distributor · vendor — every layer of the supply chain", tone: "secondary" as const },
