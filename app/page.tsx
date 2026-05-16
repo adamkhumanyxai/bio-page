@@ -4,7 +4,7 @@ import TopBar from '@/components/TopBar';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import Brands from '@/components/Brands';
-import Timeline from '@/components/Timeline';
+import VoiceJourney from '@/components/VoiceJourney';
 import Avatar from '@/components/Avatar';
 import Projects from '@/components/Projects';
 import Record from '@/components/Record';
@@ -25,7 +25,7 @@ export default function Page() {
       <Nav onTalk={openModal} />
       <Hero onTalk={openModal} />
       <Brands />
-      <Timeline />
+      <VoiceJourney />
       <Avatar onTalk={openModal} />
       <Projects />
       <Record />

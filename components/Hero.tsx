@@ -44,8 +44,8 @@ export default function Hero({ onTalk }: Props) {
             </p>
             <p style={{ fontSize: 16, lineHeight: 1.65, color: 'var(--body)', marginTop: 24 }}>
               I&apos;m Adam. I&apos;ve sold every wave of business voice since the PBX — most recently as an
-              enterprise AE at Twilio. I&apos;m now pivoting into a founding GTM seat at a Voice AI
-              startup. This site is the conversation, the demo, and the first work sample.
+              enterprise AE at Twilio. I&apos;m now looking for my next seat: founding GTM or senior AE
+              at a company building the next wave of voice. This site is the work sample.
             </p>
 
             <div style={{ display: 'flex', gap: 12, marginTop: 32 }}>
