@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 import TopBar from '@/components/TopBar';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
@@ -10,26 +9,26 @@ import Projects from '@/components/Projects';
 import OffTheClock from '@/components/OffTheClock';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import VoiceCloneModal from '@/components/VoiceCloneModal';
+
+const scrollToDemo = () => {
+  if (typeof document !== 'undefined') {
+    document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 export default function Page() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
-
   return (
     <div style={{ background: 'var(--bg)', color: 'var(--ink)', fontFamily: 'var(--body-f)', position: 'relative' }}>
       <TopBar />
-      <Nav onTalk={openModal} />
-      <Hero onTalk={openModal} />
+      <Nav onTalk={scrollToDemo} />
+      <Hero onTalk={scrollToDemo} />
       <Brands />
       <VoiceJourney />
-      <Avatar onTalk={openModal} />
+      <Avatar />
       <Projects />
       <OffTheClock />
-      <Contact onTalk={openModal} />
+      <Contact onTalk={scrollToDemo} />
       <Footer />
-      <VoiceCloneModal open={modalOpen} onClose={closeModal} />
     </div>
   );
 }

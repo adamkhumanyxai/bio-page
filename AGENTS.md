@@ -21,7 +21,8 @@
 - Single-page site. `app/page.tsx` is the only route; everything else is composed from `components/*` into one client tree.
 - `app/page.tsx` is `'use client'` because the voice modal needs React state — intentional, not a candidate for server-component refactor.
 - Content (timeline, projects) lives in `lib/data.ts` (`TIMELINE`, `PROJECTS`). Edit copy there, not in component JSX.
-- Voice twin: `components/VoiceCloneModal.tsx` uses `@elevenlabs/react` (`ConversationProvider` + `useConversation`) over WebRTC. The agent's knowledge/system prompt lives in the **ElevenLabs dashboard**, not this repo — if numbers on the site change, update the ElevenLabs agent prompt to match.
+- Voice twin: `components/Avatar.tsx` embeds `@elevenlabs/react` (`ConversationProvider` + `useConversation`) inline on the portrait — no popup modal. Transcript, mute, and connection state live inside the `VoiceSurface` child. The agent's knowledge/system prompt lives in the **ElevenLabs dashboard**, not this repo — if numbers on the site change, update the ElevenLabs agent prompt to match.
+- Nav, Hero, and Contact "Talk to my voice twin" CTAs all smooth-scroll to `#demo` (the Avatar section) instead of opening a modal — see `scrollToDemo` in `app/page.tsx`.
 - Path alias: `@/*` → repo root (tsconfig).
 
 ## Styling
@@ -31,7 +32,7 @@
 
 ## Known gotchas
 - `next.config.ts` still allows `files2.heygen.ai` in `images.remotePatterns`. The HeyGen avatar was removed from the site — the entry is stale but harmless; remove it only if you're cleaning up image config.
-- Voice modal state (transcript, mute, connection) resets on close by design — don't add persistence without being asked.
+- Inline voice state (transcript, mute, connection) lives in `Avatar.tsx`'s `VoiceSurface` and resets if the user ends the conversation — no persistence by design.
 
 ## Existing docs in repo
 - `README.md` — local run + quality gates + voice twin notes.

@@ -58,6 +58,16 @@ img { display: block; max-width: 100%; }
 }
 .navLink:hover { opacity: 1; }
 
+@keyframes voicepulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.55; }
+}
+
+@keyframes voicering {
+  0% { transform: scale(0.7); opacity: 0.45; }
+  100% { transform: scale(1.25); opacity: 0; }
+}
+
 .projectCard {
   transition: box-shadow 0.2s, transform 0.2s;
   cursor: default;
