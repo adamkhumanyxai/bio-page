@@ -65,8 +65,8 @@ export default function Hero({ onTalk }: Props) {
                 <span style={{ width: 7, height: 7, borderRadius: 999, background: 'var(--accent)', boxShadow: '0 0 0 4px rgba(44,95,255,0.25)' }} />
                 Talk to my voice twin
               </button>
-              <a href="#timeline" style={{ padding: '15px 22px', background: 'transparent', color: 'var(--ink)', border: '1px solid var(--ink)', borderRadius: 0, fontSize: 13, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 600, display: 'inline-flex', alignItems: 'center' }}>
-                Skip to timeline ↓
+              <a href="/adam-kratiuk-cv.pdf" download style={{ padding: '15px 24px', background: 'var(--accent)', color: '#fff', border: 'none', borderRadius: 0, fontSize: 13, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 10, boxShadow: '0 16px 40px rgba(44,95,255,0.35)', cursor: 'pointer' }}>
+                Download my CV ↓
               </a>
             </div>
           </div>
