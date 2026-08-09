@@ -96,20 +96,9 @@ img { display: block; max-width: 100%; }
   .hobbyTileLarge,
   .hobbyTileWide,
   .hobbyTile { grid-column: span 6 !important; }
-  .footerInner {
-    align-items: flex-start !important;
-    flex-direction: column !important;
-    gap: 14px !important;
-  }
 }
 
 @media (max-width: 760px) {
-  .topBarInner {
-    gap: 8px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-  .topBarInner span:last-child { display: none !important; }
   .navInner,
   .sectionWrap,
   .heroSection,
@@ -167,10 +156,6 @@ img { display: block; max-width: 100%; }
   .hobbyTileWide,
   .hobbyTile {
     min-height: 260px !important;
-  }
-  .footerInner {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
   }
 }
 
