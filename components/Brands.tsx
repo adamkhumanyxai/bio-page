@@ -11,6 +11,8 @@ const BRANDS = [
   { name: '8x8',         src: '/logos/8x8.svg',         w: 60  },
   { name: 'Radvision',   src: '/logos/radvision.jpg',   w: 110 },
   { name: 'LifeSize',    src: '/logos/lifesize.png',    w: 100 },
+  { name: 'ElevenLabs',  src: '/logos/elevenlabs.svg',  w: 120 },
+  { name: 'Telnyx',      src: '/logos/telnyx.svg',      w: 100 },
 ];
 
 export default function Brands() {

@@ -10,7 +10,7 @@ const PHOTOS = [
   '/bender/20250412_193756.jpg',
 ];
 
-const ROTATION_MS = 5500;
+const ROTATION_MS = 3000;
 
 export default function BenderCarousel() {
   const [idx, setIdx] = useState(0);
