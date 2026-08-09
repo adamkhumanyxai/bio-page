@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Placeholder from './Placeholder';
+import BenderCarousel from './BenderCarousel';
 import { useFadeIn } from '@/hooks/useFadeIn';
 
 const HOBBIES = [
@@ -36,8 +37,8 @@ export default function OffTheClock() {
         <div className="hobbyGrid" style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gridAutoRows: 'minmax(220px, auto)', gap: 20 }}>
           {/* Hero tile — Bender */}
           <div className="hobbyTileLarge" style={{ gridColumn: 'span 7', gridRow: 'span 2', background: 'var(--bg-ink)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
-            <Placeholder caption={HOBBIES[0].caption} tone="dark" />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.8))', padding: 32, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+            <BenderCarousel />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.8))', padding: 32, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', pointerEvents: 'none' }}>
               <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--accent)', fontFamily: 'var(--mono)', marginBottom: 12 }}>{HOBBIES[0].tag.toUpperCase()}</div>
               <h3 style={{ fontFamily: 'var(--display)', fontSize: 36, fontWeight: 700, letterSpacing: -1, margin: 0, lineHeight: 1.05, maxWidth: 480 }}>{HOBBIES[0].title}</h3>
               <p style={{ fontSize: 15, lineHeight: 1.55, color: 'rgba(255,255,255,0.75)', marginTop: 14, maxWidth: 460, marginBottom: 0 }}>{HOBBIES[0].body}</p>
