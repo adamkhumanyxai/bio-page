@@ -50,7 +50,7 @@ export const TIMELINE = [
     industry: "Sub-second latency. The agent doesn't just route the call — it takes it. Founders are shipping conversational products faster than enterprises can write a policy on them.",
     role: "Net-new for Xero's JAX · vibe-coder on nights & weekends · looking for the right founding-GTM seat",
     win: "Closed Xero as a net-new Twilio customer for JAX — their generative AI business companion. Shipped four of my own AI side projects on nights and weekends, including Son GPT 2.0 — a clone of me my Mum can call. The next move is into the room — not selling for the wave-makers, but with them.",
-    artifact: "ElevenLabs. HeyGen. Twilio Voice AI. The fact that you can have a conversation with me right now without me being awake.",
+    artifact: "ElevenLabs. Twilio Voice AI. The fact that you can have a real conversation with me right now without me being awake.",
     current: true,
   },
 ];
@@ -76,17 +76,8 @@ export const PROJECTS = [
   },
   {
     name: "Twin",
-    blurb: "The agent on this site — my ElevenLabs voice clone, plugged into a HeyGen avatar, answering from twenty years of decks and deals. The portfolio piece that doubles as the demo.",
-    stack: "ElevenLabs · HeyGen · LiveKit",
+    blurb: "The agent on this site — my real ElevenLabs voice clone, answering live from twenty years of decks and deals. The portfolio piece that doubles as the demo.",
+    stack: "ElevenLabs · Next.js",
     status: "You're using it",
   },
-];
-
-export const RECORD = [
-  { num: "4×", label: "President's Club — Monaco · Costa Rica · Jamaica · Bahamas", tone: "primary" as const },
-  { num: "180%", label: "avg quota over 5 yrs at Twilio — 331% → 175% → 191% → 120% → 81%", tone: "secondary" as const },
-  { num: "2015", label: "Global Mid-Market Rep of the Year — Genesys / Interactive Intelligence", tone: "secondary" as const },
-  { num: "20 yrs", label: "In voice — every wave from PBX to Voice AI", tone: "secondary" as const },
-  { num: "3 seats", label: "Reseller · distributor · vendor — every layer of the supply chain", tone: "secondary" as const },
-  { num: "4", label: "AI side projects shipped — Son GPT 2.0 was the first", tone: "secondary" as const },
 ];

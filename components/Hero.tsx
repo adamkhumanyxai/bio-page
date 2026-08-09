@@ -34,25 +34,17 @@ function StatCell({ num, suffix, small, note, accent, index, hasBorder }: {
 export default function Hero({ onTalk }: Props) {
   const ref = useFadeIn();
   return (
-    <section id="story" ref={ref as React.RefObject<HTMLElement>} style={{ maxWidth: 1520, margin: '0 auto', padding: '72px 40px 0' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.05fr', gap: 56, alignItems: 'end' }}>
+    <section id="story" className="heroSection" ref={ref as React.RefObject<HTMLElement>} style={{ maxWidth: 1520, margin: '0 auto', padding: '72px 40px 0' }}>
+      <div className="heroGrid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.05fr', gap: 56, alignItems: 'end' }}>
         <div style={{ position: 'relative' }}>
-          <div style={{ position: 'absolute', top: -32, right: -16, padding: '5px 10px', background: 'var(--accent)', color: '#fff', fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: 1.2, zIndex: 2 }}>
-            FIG. 01 · THE OPERATOR
-          </div>
           <div style={{ position: 'relative', overflow: 'hidden', aspectRatio: '4/5', maxHeight: 620 }}>
-            <Image src="/adam-portrait.jpg" alt="Adam Kratiuk" fill style={{ objectFit: 'cover', objectPosition: 'center 30%', filter: 'grayscale(1) contrast(1.05)' }} priority />
+            <Image src="/adam-portrait.jpg" alt="Adam Kratiuk" fill style={{ objectFit: 'cover', objectPosition: 'center 30%', filter: 'grayscale(1) contrast(1.05)' }} sizes="(max-width: 900px) 100vw, 46vw" priority />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 60%, rgba(44,95,255,0.09) 100%)', mixBlendMode: 'multiply' }} />
           </div>
         </div>
 
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 36, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
-            <span style={{ width: 36, height: 1, background: 'var(--ink)', display: 'block' }} />
-            Vol. I · A bio in long form
-          </div>
-
-          <h1 style={{ fontFamily: 'var(--display)', fontSize: 196, lineHeight: 0.88, letterSpacing: -8, margin: 0, fontWeight: 800 }}>
+          <h1 className="heroTitle" style={{ fontFamily: 'var(--display)', fontSize: 196, lineHeight: 0.88, letterSpacing: -8, margin: 0, fontWeight: 800 }}>
             Hello<span style={{ color: 'var(--accent)' }}>.</span>
           </h1>
 
@@ -68,10 +60,10 @@ export default function Hero({ onTalk }: Props) {
               at a company building the next wave of voice. This site is the work sample.
             </p>
 
-            <div style={{ display: 'flex', gap: 12, marginTop: 32 }}>
+            <div className="heroActions" style={{ display: 'flex', gap: 12, marginTop: 32 }}>
               <button onClick={onTalk} style={{ padding: '15px 22px', background: 'var(--bg-ink)', color: '#fff', border: 'none', borderRadius: 0, fontSize: 13, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 600, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 10 }}>
                 <span style={{ width: 7, height: 7, borderRadius: 999, background: 'var(--accent)', boxShadow: '0 0 0 4px rgba(44,95,255,0.25)' }} />
-                Meet my AI twin
+                Talk to my voice twin
               </button>
               <a href="#timeline" style={{ padding: '15px 22px', background: 'transparent', color: 'var(--ink)', border: '1px solid var(--ink)', borderRadius: 0, fontSize: 13, letterSpacing: 1.5, textTransform: 'uppercase', fontWeight: 600, display: 'inline-flex', alignItems: 'center' }}>
                 Skip to timeline ↓
@@ -81,23 +73,17 @@ export default function Hero({ onTalk }: Props) {
         </div>
       </div>
 
-      <div style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid var(--rule-hard)' }}>
+      <div className="heroStats" style={{ marginTop: 64, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid var(--rule-hard)' }}>
         {STATS.map((s, i) => (
           <StatCell key={i} {...s} index={i} hasBorder={i < 3} />
         ))}
       </div>
 
-      <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 2fr 1fr', gap: 48, alignItems: 'center' }}>
-        <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)', letterSpacing: 1.4 }}>
-          ↘ Reading time · 7 min<br />↘ Listening time · as long as you&apos;d like
-        </div>
-        <p style={{ fontFamily: 'var(--display)', fontStyle: 'italic', fontSize: 19, lineHeight: 1.45, color: 'var(--body)', margin: 0, textAlign: 'center', maxWidth: 600, justifySelf: 'center' }}>
+      <div className="heroNoteGrid" style={{ marginTop: 40, display: 'flex', justifyContent: 'center' }}>
+        <p style={{ fontFamily: 'var(--display)', fontStyle: 'italic', fontSize: 19, lineHeight: 1.45, color: 'var(--body)', margin: 0, textAlign: 'center', maxWidth: 600 }}>
           &ldquo;If you&apos;ve sold every version of a thing for twenty years — and you can still vibe-code
           one yourself on a Saturday — you can probably sell the next one.&rdquo;
         </p>
-        <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)', letterSpacing: 1.4, textAlign: 'right' }}>
-          A. Kratiuk, 2026<br />Cronulla, NSW
-        </div>
       </div>
     </section>
   );

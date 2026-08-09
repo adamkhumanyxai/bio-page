@@ -89,7 +89,7 @@ export default function VoiceJourney() {
           marginBottom: 56, fontSize: 11, letterSpacing: 2.4,
           textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', fontFamily: 'var(--mono)',
         }}>
-          <span><span style={{ color: 'var(--accent)' }}>§ 02</span> · The spine</span>
+          <span>Career timeline</span>
           <span>Hover any era · {TIMELINE.length} waves · every seat</span>
         </div>
         <h2 style={{
@@ -231,7 +231,7 @@ export default function VoiceJourney() {
           </div>
 
           <div style={{ marginTop: 24, fontSize: 12, lineHeight: 1.7, color: 'rgba(255,255,255,0.55)', fontFamily: 'var(--mono)' }}>
-            <span style={{ color: 'var(--accent)', letterSpacing: 0.8 }}>// vocabulary of the era · </span>
+            <span style={{ color: 'var(--accent)', letterSpacing: 0.8 }}>{'// vocabulary of the era · '}</span>
             {t.artifact}
           </div>
         </div>

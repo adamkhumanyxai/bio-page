@@ -13,14 +13,14 @@ export default function Projects() {
   const ref = useFadeIn();
   return (
     <section id="projects" ref={ref as React.RefObject<HTMLElement>} style={{ background: 'var(--bg-card)', borderTop: '1px solid var(--rule)', borderBottom: '1px solid var(--rule)' }}>
-      <div style={{ maxWidth: 1520, margin: '0 auto', padding: '120px 40px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: 14, borderBottom: '1px solid var(--rule)', marginBottom: 36, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
-          <span><span style={{ color: 'var(--accent)' }}>§ 03</span> · The proof · I don&apos;t just sell it, I ship it</span>
-          <span>Four projects · two live · two in beta</span>
+      <div className="sectionWrap" style={{ maxWidth: 1520, margin: '0 auto', padding: '120px 40px' }}>
+        <div className="sectionKicker" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: 14, borderBottom: '1px solid var(--rule)', marginBottom: 36, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
+          <span>Projects</span>
+          <span>Nights &amp; weekends</span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 64, alignItems: 'end', marginBottom: 56 }}>
-          <h2 style={{ fontFamily: 'var(--display)', fontSize: 84, lineHeight: 0.95, letterSpacing: -3, margin: 0, fontWeight: 800 }}>
+        <div className="introGrid" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 64, alignItems: 'end', marginBottom: 56 }}>
+          <h2 className="sectionTitle" style={{ fontFamily: 'var(--display)', fontSize: 84, lineHeight: 0.95, letterSpacing: -3, margin: 0, fontWeight: 800 }}>
             Sellers who can ship<br />
             <span style={{ color: 'var(--muted)' }}>are different sellers.</span>
           </h2>
@@ -30,7 +30,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
+        <div className="projectGrid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
           {PROJECTS.map((p, i) => {
             const th = CARD_THEMES[i];
             const live = p.status.startsWith('Live') || p.status.startsWith('You');
@@ -56,7 +56,7 @@ export default function Projects() {
                   <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--body)', marginTop: 14, marginBottom: 0 }}>{p.blurb}</p>
                   <div style={{ marginTop: 20, paddingTop: 16, borderTop: '1px solid var(--rule)', display: 'flex', justifyContent: 'space-between', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)' }}>
                     <span>{p.stack}</span>
-                    <span style={{ color: 'var(--accent)', fontWeight: 600 }}>↗ open project</span>
+                    <span style={{ color: 'var(--accent)', fontWeight: 600 }}>walkthrough on request</span>
                   </div>
                 </div>
               </article>

@@ -16,14 +16,14 @@ export default function OffTheClock() {
   const ref = useFadeIn();
   return (
     <section id="off-the-clock" ref={ref as React.RefObject<HTMLElement>} style={{ background: 'var(--bg)' }}>
-      <div style={{ maxWidth: 1520, margin: '0 auto', padding: '120px 40px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: 14, borderBottom: '1px solid var(--rule)', marginBottom: 36, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
-          <span><span style={{ color: 'var(--accent)' }}>§ 06</span> · Off the clock · the human behind the seller</span>
-          <span>Six tiles · drop in real photos when ready</span>
+      <div className="sectionWrap" style={{ maxWidth: 1520, margin: '0 auto', padding: '120px 40px' }}>
+        <div className="sectionKicker" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: 14, borderBottom: '1px solid var(--rule)', marginBottom: 36, fontSize: 11, letterSpacing: 2.4, textTransform: 'uppercase', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>
+          <span>Off the clock</span>
+          <span>The human behind the seller</span>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 64, alignItems: 'end', marginBottom: 64 }}>
-          <h2 style={{ fontFamily: 'var(--display)', fontSize: 104, lineHeight: 0.94, letterSpacing: -4, margin: 0, fontWeight: 800 }}>
+        <div className="introGrid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 64, alignItems: 'end', marginBottom: 64 }}>
+          <h2 className="sectionTitle" style={{ fontFamily: 'var(--display)', fontSize: 104, lineHeight: 0.94, letterSpacing: -4, margin: 0, fontWeight: 800 }}>
             And when<br />
             <span style={{ fontStyle: 'italic', fontWeight: 500 }}>I&apos;m not selling<span style={{ color: 'var(--accent)' }}>—</span></span>
           </h2>
@@ -33,9 +33,9 @@ export default function OffTheClock() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gridAutoRows: 'minmax(220px, auto)', gap: 20 }}>
+        <div className="hobbyGrid" style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gridAutoRows: 'minmax(220px, auto)', gap: 20 }}>
           {/* Hero tile — Bender */}
-          <div style={{ gridColumn: 'span 7', gridRow: 'span 2', background: 'var(--bg-ink)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+          <div className="hobbyTileLarge" style={{ gridColumn: 'span 7', gridRow: 'span 2', background: 'var(--bg-ink)', color: '#fff', position: 'relative', overflow: 'hidden' }}>
             <Placeholder caption={HOBBIES[0].caption} tone="dark" />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.8))', padding: 32, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
               <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--accent)', fontFamily: 'var(--mono)', marginBottom: 12 }}>{HOBBIES[0].tag.toUpperCase()}</div>
@@ -45,7 +45,7 @@ export default function OffTheClock() {
           </div>
 
           {/* Bali */}
-          <div style={{ gridColumn: 'span 5', background: 'var(--bg-card)', border: '1px solid var(--rule)', padding: 28, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div className="hobbyTileWide" style={{ gridColumn: 'span 5', background: 'var(--bg-card)', border: '1px solid var(--rule)', padding: 28, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--accent)', fontFamily: 'var(--mono)', marginBottom: 12 }}>{HOBBIES[1].tag.toUpperCase()}</div>
               <h3 style={{ fontFamily: 'var(--display)', fontSize: 30, fontWeight: 700, letterSpacing: -0.8, margin: 0, lineHeight: 1.05 }}>{HOBBIES[1].title}</h3>
@@ -57,7 +57,7 @@ export default function OffTheClock() {
           </div>
 
           {/* Surf */}
-          <div style={{ gridColumn: 'span 5', position: 'relative', overflow: 'hidden' }}>
+          <div className="hobbyTileWide" style={{ gridColumn: 'span 5', position: 'relative', overflow: 'hidden' }}>
             <Placeholder caption={HOBBIES[2].caption} tone="light" />
             <div style={{ position: 'absolute', inset: 0, padding: 24, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', background: 'linear-gradient(180deg, transparent 50%, rgba(255,255,255,0.95))' }}>
               <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--accent)', fontFamily: 'var(--mono)', marginBottom: 8 }}>{HOBBIES[2].tag.toUpperCase()}</div>
@@ -66,7 +66,7 @@ export default function OffTheClock() {
           </div>
 
           {/* Snowboard */}
-          <div style={{ gridColumn: 'span 4', background: 'var(--bg-deep)', padding: 28, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+          <div className="hobbyTile" style={{ gridColumn: 'span 4', background: 'var(--bg-deep)', padding: 28, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--accent)', fontFamily: 'var(--mono)', marginBottom: 12 }}>{HOBBIES[3].tag.toUpperCase()}</div>
               <h3 style={{ fontFamily: 'var(--display)', fontSize: 22, fontWeight: 700, letterSpacing: -0.5, margin: 0, lineHeight: 1.15 }}>{HOBBIES[3].title}</h3>
@@ -80,7 +80,7 @@ export default function OffTheClock() {
           </div>
 
           {/* Golf */}
-          <div style={{ gridColumn: 'span 4', background: 'var(--bg-card)', border: '1px solid var(--rule)', padding: 28 }}>
+          <div className="hobbyTile" style={{ gridColumn: 'span 4', background: 'var(--bg-card)', border: '1px solid var(--rule)', padding: 28 }}>
             <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--accent)', fontFamily: 'var(--mono)', marginBottom: 12 }}>{HOBBIES[4].tag.toUpperCase()}</div>
             <h3 style={{ fontFamily: 'var(--display)', fontSize: 22, fontWeight: 700, letterSpacing: -0.5, margin: 0, lineHeight: 1.15 }}>{HOBBIES[4].title}</h3>
             <p style={{ fontSize: 13, lineHeight: 1.55, color: 'var(--body)', marginTop: 10 }}>{HOBBIES[4].body}</p>
@@ -92,7 +92,7 @@ export default function OffTheClock() {
           </div>
 
           {/* Vibe-code lab */}
-          <div style={{ gridColumn: 'span 4', position: 'relative', overflow: 'hidden', background: 'var(--bg-ink)', color: '#fff' }}>
+          <div className="hobbyTile" style={{ gridColumn: 'span 4', position: 'relative', overflow: 'hidden', background: 'var(--bg-ink)', color: '#fff' }}>
             <Placeholder caption={HOBBIES[5].caption} tone="dark" />
             <div style={{ position: 'absolute', inset: 0, padding: 24, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', background: 'linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.78))' }}>
               <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--accent)', fontFamily: 'var(--mono)', marginBottom: 8 }}>{HOBBIES[5].tag.toUpperCase()}</div>
@@ -102,10 +102,6 @@ export default function OffTheClock() {
           </div>
         </div>
 
-        <div style={{ marginTop: 56, display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 24, borderTop: '1px solid var(--rule)', fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--muted)', letterSpacing: 1.2 }}>
-          <span>↘ if you&apos;re still here, you&apos;re probably the right kind of reader.</span>
-          <span>— A. K.</span>
-        </div>
       </div>
     </section>
   );

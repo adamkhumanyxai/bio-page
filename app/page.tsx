@@ -7,8 +7,6 @@ import Brands from '@/components/Brands';
 import VoiceJourney from '@/components/VoiceJourney';
 import Avatar from '@/components/Avatar';
 import Projects from '@/components/Projects';
-import Record from '@/components/Record';
-import OnStage from '@/components/OnStage';
 import OffTheClock from '@/components/OffTheClock';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -28,8 +26,6 @@ export default function Page() {
       <VoiceJourney />
       <Avatar onTalk={openModal} />
       <Projects />
-      <Record />
-      <OnStage />
       <OffTheClock />
       <Contact onTalk={openModal} />
       <Footer />
