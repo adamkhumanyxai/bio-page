@@ -15,26 +15,37 @@ const BRANDS = [
   { name: 'Telnyx',      src: '/logos/telnyx.svg',      w: 100 },
 ];
 
+const GAP = 96;
+
+function Track() {
+  return (
+    <div className="brandTrack" style={{ display: 'flex', alignItems: 'center', gap: GAP, flexShrink: 0, paddingRight: GAP }} aria-hidden="true">
+      {BRANDS.map(b => (
+        <div
+          key={b.name}
+          style={{ position: 'relative', height: 36, width: b.w, flexShrink: 0, opacity: 0.65, transition: 'opacity 0.2s' }}
+          onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
+          onMouseLeave={e => (e.currentTarget.style.opacity = '0.65')}
+        >
+          <Image
+            src={b.src}
+            alt={b.name}
+            fill
+            style={{ objectFit: 'contain', objectPosition: 'center' }}
+            sizes={`${b.w}px`}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Brands() {
   return (
-    <section style={{ borderTop: '1px solid var(--rule)', borderBottom: '1px solid var(--rule)', marginTop: 72 }}>
-      <div className="brandStrip" style={{ padding: '24px 40px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        {BRANDS.map(b => (
-          <div
-            key={b.name}
-            style={{ position: 'relative', height: 32, width: b.w, flexShrink: 0, opacity: 0.65, transition: 'opacity 0.2s' }}
-            onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
-            onMouseLeave={e => (e.currentTarget.style.opacity = '0.65')}
-          >
-            <Image
-              src={b.src}
-              alt={b.name}
-              fill
-              style={{ objectFit: 'contain', objectPosition: 'center' }}
-              sizes={`${b.w}px`}
-            />
-          </div>
-        ))}
+    <section style={{ borderTop: '1px solid var(--rule)', borderBottom: '1px solid var(--rule)', marginTop: 72, padding: '28px 0', overflow: 'hidden' }}>
+      <div className="brandTicker" style={{ display: 'flex', width: 'max-content' }}>
+        <Track />
+        <Track />
       </div>
     </section>
   );

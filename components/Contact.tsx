@@ -30,14 +30,9 @@ export default function Contact({ onTalk }: Props) {
           <a href="https://www.linkedin.com/in/adam-kratiuk" target="_blank" rel="noopener noreferrer" style={{ padding: '18px 26px', background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.3)', borderRadius: 999, fontSize: 15, fontWeight: 500, display: 'inline-flex', alignItems: 'center' }}>
             linkedin.com/in/adam-kratiuk
           </a>
-          <a href="mailto:akratiuk85@gmail.com?subject=Book%2020%20minutes%20with%20Adam" style={{ padding: '18px 26px', background: 'transparent', color: '#fff', border: '1px solid rgba(255,255,255,0.3)', borderRadius: 999, fontSize: 15, fontWeight: 500, display: 'inline-flex', alignItems: 'center' }}>
-            📅 Book 20 min →
+          <a href="/adam-kratiuk-cv.pdf" download style={{ padding: '18px 28px', background: 'var(--accent)', color: '#fff', border: 'none', borderRadius: 999, fontSize: 15, fontWeight: 700, letterSpacing: 0.4, display: 'inline-flex', alignItems: 'center', gap: 10, boxShadow: '0 14px 36px rgba(44,95,255,0.4)', cursor: 'pointer' }}>
+            Download my resume ↓
           </a>
-        </div>
-        <div className="contactMeta" style={{ marginTop: 64, display: 'inline-flex', gap: 28, padding: '14px 24px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 999, fontFamily: 'var(--mono)', fontSize: 12, color: 'rgba(255,255,255,0.7)', letterSpacing: 0.4 }}>
-          <span>cronulla, nsw · australia</span>
-          <span>open to bay area / eu / remote</span>
-          <span>replies under 24h, usually faster</span>
         </div>
       </div>
     </section>

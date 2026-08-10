@@ -68,6 +68,19 @@ img { display: block; max-width: 100%; }
   100% { transform: scale(1.25); opacity: 0; }
 }
 
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.brandTicker {
+  animation: ticker 42s linear infinite;
+  will-change: transform;
+}
+.brandTicker:hover {
+  animation-play-state: paused;
+}
+
 .projectCard {
   transition: box-shadow 0.2s, transform 0.2s;
   cursor: default;
@@ -133,21 +146,6 @@ img { display: block; max-width: 100%; }
     border-bottom: 1px solid var(--rule) !important;
   }
   .heroStats > div:last-child { border-bottom: none !important; }
-  .contactMeta {
-    align-items: center !important;
-    border-radius: 18px !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-  }
-  .brandStrip {
-    gap: 26px !important;
-    justify-content: flex-start !important;
-    overflow-x: auto !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    scrollbar-width: none;
-  }
-  .brandStrip::-webkit-scrollbar { display: none; }
   .hobbyGrid {
     display: flex !important;
     flex-direction: column !important;

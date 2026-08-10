@@ -2,6 +2,7 @@
 import React from 'react';
 import Placeholder from './Placeholder';
 import BenderCarousel from './BenderCarousel';
+import GolfCarousel from './GolfCarousel';
 import { useFadeIn } from '@/hooks/useFadeIn';
 
 const HOBBIES = [
@@ -81,15 +82,12 @@ export default function OffTheClock() {
           </div>
 
           {/* Golf */}
-          <div className="hobbyTile" style={{ gridColumn: 'span 4', background: 'var(--bg-card)', border: '1px solid var(--rule)', padding: 28 }}>
-            <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--accent)', fontFamily: 'var(--mono)', marginBottom: 12 }}>{HOBBIES[4].tag.toUpperCase()}</div>
-            <h3 style={{ fontFamily: 'var(--display)', fontSize: 22, fontWeight: 700, letterSpacing: -0.5, margin: 0, lineHeight: 1.15 }}>{HOBBIES[4].title}</h3>
-            <p style={{ fontSize: 13, lineHeight: 1.55, color: 'var(--body)', marginTop: 10 }}>{HOBBIES[4].body}</p>
-            <ul style={{ margin: 0, marginTop: 14, padding: 0, listStyle: 'none', fontSize: 12, color: 'var(--muted)', fontFamily: 'var(--mono)', lineHeight: 1.9 }}>
-              <li>· home course · The Kingsway, Cronulla</li>
-              <li>· best round · better than last time</li>
-              <li>· partners · mates, always mates</li>
-            </ul>
+          <div className="hobbyTile" style={{ gridColumn: 'span 4', position: 'relative', overflow: 'hidden', background: 'var(--bg-ink)' }}>
+            <GolfCarousel />
+            <div style={{ position: 'absolute', inset: 0, padding: 24, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', background: 'linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.82))', pointerEvents: 'none' }}>
+              <div style={{ fontSize: 11, letterSpacing: 2, color: 'var(--accent)', fontFamily: 'var(--mono)', marginBottom: 8 }}>{HOBBIES[4].tag.toUpperCase()}</div>
+              <h3 style={{ fontFamily: 'var(--display)', fontSize: 22, fontWeight: 700, letterSpacing: -0.5, margin: 0, lineHeight: 1.15, color: '#fff' }}>{HOBBIES[4].title}</h3>
+            </div>
           </div>
 
           {/* Vibe-code lab */}
